@@ -23,4 +23,5 @@ print(activites.count("course"))
 print([activites.index("natation")])
 
 #Trier la liste dans l'ordre alphabétique
+
 print(sorted(activites))
