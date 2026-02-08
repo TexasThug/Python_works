@@ -18,7 +18,7 @@ print("Nombre de colonnes :", df.shape[1])
 # 3. Type de chaque colonne
 print("\nType de chaque colonne :")
 print(df.dtypes)
-
+print("---------------------------")
 print("----Exercice2----")
 # 1. Garde uniquement les lignes où product == "A"
 df[df["product"] == "A"]
@@ -28,6 +28,7 @@ df[df["quantity"] >= 2]
 
 # 3. Garde les lignes où : product == "B" ET price == 15
 df[(df["product"] == "B") & (df["price"] == 15)]
+print("---------------------------")
 
 print("----Exercice3----")
 # 1. Créer total_price
@@ -35,6 +36,7 @@ df["total_price"] = df["price"] * df["quantity"]
 
 # 2. Valeur total des ventes 
 df["total_price"].sum()
+print("---------------------------")
 
 print("----Exercice4----")
 # 1. Prix moyen
@@ -45,6 +47,7 @@ df["quantity"].sum()
 
 # 3. Nombre d’occurrences par produit
 df["product"].value_counts()
+print("---------------------------")
 
 print("----Exercice5----")
 # Produit le plus vendu 
