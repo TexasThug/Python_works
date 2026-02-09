@@ -1,0 +1,13 @@
+import numpy as np 
+
+# Mise en place des données 
+np.random.seed(42)
+donnees_brutes = np.random.randint(50,100,28)
+
+# Transformation en (Machines, Jours, Equipes)
+production = donnees_brutes.reshape(2,7,2)
+print(donnees_brutes)
+
+# On somme sur les axes 1 (jours) et 2 (équipes)
+total_par_machine = production.sum(axis=(1, 2)) 
+print(f"Total Machine 1 : {total_par_machine[0]}, Machine 2 : {total_par_machine[1]}")
