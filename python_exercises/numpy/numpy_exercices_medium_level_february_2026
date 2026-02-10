@@ -1,0 +1,72 @@
+import numpy as np
+
+# --- Exercice 11 : Génération de données ---
+# Crée un array de 20 valeurs allant de 0 à 100, réparties de façon égale (linspace).
+# C'est très utile pour créer des axes de graphiques.
+print("---Exercice 11---")
+arr_lin = np.linspace(0, 100, 20)
+print(arr_lin)
+
+# --- Exercice 12 : Nombres aléatoires ---
+# Crée une matrice (3x3) de nombres aléatoires compris entre 0 et 1.
+print("---Exercice 12---")
+mat_rand = np.random.rand(3, 3)
+print(mat_rand)
+
+# --- Exercice 13 : Reshaping (Le grand classique) ---
+# Crée un array 1D de 12 éléments (de 1 à 12) et transforme-le en matrice (3x4).
+print("---Exercice 13---")
+arr = np.arange(1, 13)
+mat = arr.reshape(3, 4)
+print(mat)
+
+# --- Exercice 14 : Masque Booléen avancé ---
+# Dans la matrice précédente (3x4), remplace toutes les valeurs paires par -1.
+print("---Exercice 14---")
+mat[mat % 2 == 0] = -1
+print(mat)
+
+# --- Exercice 15 : Indexation de matrice ---
+# Crée une matrice 4x4 (avec np.arange(16).reshape(4,4)).
+# Récupère uniquement la "sous-matrice" centrale de 2x2.
+print("---Exercice 15---")
+full_mat = np.arange(16).reshape(4, 4)
+sub_mat = full_mat[1:3, 1:3]
+print(sub_mat)
+
+# --- Exercice 16 : Normalisation de données ---
+# Soit un array de notes. Normalise-les entre 0 et 1.
+# Formule : (x - min) / (max - min)
+print("---Exercice 16---")
+notes = np.array([12, 15, 8, 20, 10])
+notes_norm = (notes - notes.min()) / (notes.max() - notes.min())
+print(notes_norm)
+
+# --- Exercice 17 : Concaténation ---
+# Crée deux vecteurs [1, 2, 3] et [4, 5, 6]. Assemble-les verticalement (vstack).
+print("---Exercice 17---")
+v1 = np.array([1, 2, 3])
+v2 = np.array([4, 5, 6])
+v_stack = np.vstack((v1, v2))
+print(v_stack)
+
+# --- Exercice 18 : Argmax (Essentiel en IA) ---
+# Trouve l'INDEX de la valeur maximale dans cet array.
+print("---Exercice 18---")
+probs = np.array([0.1, 0.05, 0.7, 0.15]) # Exemple de sortie d'un modèle de classification
+index_max = np.argmax(probs)
+print("L'index de la classe prédite est :", index_max)
+
+# --- Exercice 19 : Opération par colonne ---
+# Sur une matrice 3x3 de ton choix, calcule la moyenne de chaque COLONNE.
+print("---Exercice 19---")
+data = np.array([[10, 20, 30], [5, 5, 5], [0, 10, 20]])
+print("Moyenne par colonne :", data.mean(axis=0))
+
+# --- Exercice 20 : Création de dataset factice ---
+# Crée une matrice de 100 lignes et 3 colonnes de nombres aléatoires suivant une loi normale.
+# Affiche sa forme et les 5 premières lignes.
+print("---Exercice 20---")
+dataset = np.random.randn(100, 3)
+print("Shape :", dataset.shape)
+print("5 premières lignes :\n", dataset[:5])
